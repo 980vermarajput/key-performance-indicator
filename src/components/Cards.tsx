@@ -64,8 +64,12 @@ const Cards = () => {
   ) : (
     <div
       className={`grid grid-cols-1 ${
-        cards?.length === 1 ? "" : "sm:grid-cols-2 lg:grid-cols-3"
-      } ${cards?.length === 2 ? "lg:grid-cols-2" : ""}  gap-y-6`}
+        cards?.length === 1
+          ? ""
+          : cards?.length === 2
+          ? "lg:grid-cols-2"
+          : "sm:grid-cols-2 lg:grid-cols-3"
+      }  gap-y-6`}
     >
       {cards.map((card, index) => (
         <CardLayout
